@@ -1,0 +1,18 @@
+       <input id="user_id" type="hidden" value="<%= current_user.id %>" >
+       <input id="user_id" name="user_id" type="hidden" value="<%= current_user.id %>" >
+$ ->
+  $post_link   = $('#post_link')
+  $post_body   = $('#post_body')
+  $user_id     = $('#user_id')
+  $post_submit = $('#post_submit')
+
+  link = $post_link.val()
+  body = $post_body.val()
+  user_id = $user_id.val()
+
+
+
+  $post_submit.on 'click', (event) ->
+    event.preventDefault()
+    console.log 'click registered'
+

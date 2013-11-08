@@ -1,0 +1,34 @@
+<% @posts.each do |post| %>
+  <div id="outer_post">
+    Post #<%= post.id %>: <%= post.body %>
+    Link #<%= post.id %>:<a href="<%= post.link %>"> <%= post.link %></a></br>
+    <% if current_user %>
+        <%= render "votepostup", post: post %>
+        <%= render "votepostdown", post: post %>
+    <% end %>
+    <%= render "commentpost", post: post %>
+    <% post.comments.each do |comment| %>
+      <div id="comment_on_post">
+      Comment on Post #<%= post.id %>:<%= comment.text %>
+      <% if current_user %>
+      <%= render "votecommentup", comment: comment %>
+      <%= render "votecommentdown", comment: comment %>
+      </div>
+      <% end %>
+      <%= render "commentcomment", comment: comment %>
+
+      <% comment.comments.each do |commentcomment|%>
+
+        <div id="comment_on_comment">
+        Comment on Comment #<%= comment.id %>:<%= commentcomment.text %>
+        <% if current_user %>
+        <%= render "votecommentup", comment: commentcomment %>
+        <%= render "votecommentdown", comment: commentcomment %>
+        <% end %>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+
+

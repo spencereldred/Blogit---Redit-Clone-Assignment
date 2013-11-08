@@ -1,0 +1,6 @@
+<form action="/comments/<%= comment.id %>/votes" method="post">
+  <input class="vote_up" data-type="vote_up" type="submit" value="Vote UP"> +<%= comment.votes.where("vote=1").count()%>
+  <input id="user_id" name="user_id" type="hidden" value="<%= current_user.id %>" >
+  <input id="votable_type" name="votable_type" type="hidden" value="Comment" >
+  <input type="hidden" name="vote" value=1>
+</form>

@@ -1,0 +1,12 @@
+<% if current_user %>
+<form id="post_form" action="/posts" method="post" name="post_form" >
+  Title:
+  <input class="input" id="post_body" name="post_body" type="text" placeholder="Enter title"/>
+  </br>
+  Link: <input class="input" id="post_link" name="post_link" type="text" placeholder="Paste link"/></br>
+        <input id="user_id" name="user_id" type="hidden" value="<%= current_user.id %>" >
+  <input id="post_submit" type="submit" value="Post It Brah">
+</form>
+<%else%>
+<h1> log in </h1>
+<%end%>

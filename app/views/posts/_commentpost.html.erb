@@ -1,0 +1,9 @@
+<% if current_user %>
+<form id="comment_form" action="/posts/<%= post.id %>/comments" method="post" name="comment_form" >
+<!-- <form id="post_form" name="post_form" > -->
+  Comment: <input class="input" id="comment_text" name="comment_text" type="text" placeholder="Enter comment"/>
+           <input id="user_id" name="user_id" type="hidden" value="<%= current_user.id %>" >
+           <input id="commentable_type" name="commentable_type" type="hidden" value="Post" >
+           <input id="post_submit" type="submit" value="Enter Comment">
+</form>
+<% end %>

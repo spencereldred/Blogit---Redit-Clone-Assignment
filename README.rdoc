@@ -1,0 +1,10 @@
+Redit Clone Assignment
+
+rails new blogit
+
+Submit links with a title.
+Submit comments on the link.
+Submit comments on the comments.
+Submit up/down votes on the links and all comments.
+
+Uses polymorphic relationships: links and comments as commentable and votable.
