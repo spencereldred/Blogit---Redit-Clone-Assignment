@@ -1,5 +1,5 @@
 <% if current_user %>
-<form id="comment_commet_form" action="/comments/<%= comment.id %>/comments" method="post" name="comment_comment_form" >
+<form id="comment_comment_form" action="/comments/<%= comment.id %>/comments" method="post" name="comment_comment_form" >
 <!-- <form id="post_form" name="post_form" > -->
   Comment on comment: <input class="input" id="comment_text" name="comment_text" type="text" placeholder="Enter comment"/>
            <input id="user_id" name="user_id" type="hidden" value="<%= current_user.id %>" >
